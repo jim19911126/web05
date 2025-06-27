@@ -1,9 +1,10 @@
-<h3 style='text-align:center;'>新增動態文字廣告</h3>
+<h3 style='text-align:center;'>新增最新消息資料</h3>
 <hr>
 <form action="./api/insert.php" method="post" enctype="multipart/form-data">
     <div>
-        <label>動態文字廣告：</label>
-        <input type="text" name="text">
+        <label>最新消息資料：</label>
+        <textarea name="text"></textarea>
+        
     </div>
     <div>
         <input type="hidden" name="table" value="<?=$_GET['table'];?>">
