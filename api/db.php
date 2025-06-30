@@ -111,7 +111,8 @@ $Image=new DB('image');
 $News=new DB('news');
 $Admin=new DB('admin');
 $Menu=new DB('menu');
-$Btm=new DB('btm');
+$Bottom=new DB('bottom');
+$Total=new DB('total');
 
 
 
