@@ -9,7 +9,13 @@
 					<td width="10%">刪除</td>
 				</tr>
 				<?php
-				$rows=${ucfirst($do)}->all();
+				$all = count(${ucfirst($do)}->all());
+				$div = 3;
+				$pages = ceil($all / $div);
+				$now = $_GET['p'] ?? 1;
+				$start = ($now - 1) * $div;
+
+				$rows = ${ucfirst($do)}->all(" limit $start,$div");
 				foreach ($rows as $row):
 					?>
 					<tr>
@@ -29,12 +35,30 @@
 				?>
 			</tbody>
 		</table>
+
+		<div class='cent'>
+			<?php if ($now - 1 > 0): ?>
+				<a href='?do=<?= $do; ?>&p=<?= $now - 1; ?>'>
+					< </a>
+					<?php endif; ?>
+
+					<?php for ($i = 1; $i <= $pages; $i++):
+						$size = ($now == $i) ? '24px' : '';
+						?>
+						<a href='?do=<?= $do; ?>&p=<?= $i; ?>' style="font-size:<?= $size; ?>"> <?= $i; ?> </a>
+					<?php endfor; ?>
+
+					<?php if ($now + 1 <= $pages): ?>
+						<a href='?do=<?= $do; ?>&p=<?= $now + 1; ?>'>></a>
+					<?php endif; ?>
+		</div>
+
 		<table style="margin-top:40px; width:70%;">
 			<tbody>
 				<tr>
-					<input type="hidden" name="table" value="<?=$do;?>">
-					<td width="200px"><input type="button" onclick="op('#cover','#cvr','./model/<?=$do;?>.php?table=<?=$do;?>')"
-							value="新增最新消息資料"></td>
+					<input type="hidden" name="table" value="<?= $do; ?>">
+					<td width="200px"><input type="button"
+							onclick="op('#cover','#cvr','./model/<?= $do; ?>.php?table=<?= $do; ?>')" value="新增最新消息資料"></td>
 					<td class="cent"><input type="submit" value="修改確定"><input type="reset" value="重置"></td>
 
 				</tr>

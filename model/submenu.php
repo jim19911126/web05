@@ -36,7 +36,7 @@
 
     <div id="add"></div>
     <div class="cent">
-        <input type="hidden" name="id" value="<?= $_GET['id']; ?>">
+        <input type="hidden" name="main_id" value="<?= $_GET['id']; ?>">
         <input type="hidden" name="table" value="<?= $_GET['table']; ?>">
         <input type="submit" value="修改確定">
         <input type="reset" value="重置">
