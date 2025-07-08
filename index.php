@@ -69,14 +69,14 @@
 				if (isset($_SESSION['login'])):
 				?>
 				<button style="width:100%; margin-left:auto; margin-right:auto; margin-top:2px; height:50px;"
-					onclick="lo(&#39;?backend.php&#39;)">返回管理</button>
+					onclick="lo(&#39;backend.php&#39;)">返回管理</button>
 					<?php
 					else:
 					?>
 				<button style="width:100%; margin-left:auto; margin-right:auto; margin-top:2px; height:50px;"
 					onclick="lo(&#39;?do=login&#39;)">管理登入</button>
 					<?php
-					endif;
+					endif
 					?>
 				<div style="width:89%; height:480px;" class="dbor">
 					<span class="t botli">校園映象區</span>
