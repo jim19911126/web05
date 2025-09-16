@@ -2,10 +2,10 @@
 -- version 5.2.1
 -- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1
--- Generation Time: Jul 04, 2025 at 10:32 AM
--- Server version: 10.4.32-MariaDB
--- PHP Version: 8.2.12
+-- 主機： 127.0.0.1
+-- 產生時間： 2025-09-16 10:30:26
+-- 伺服器版本： 10.4.32-MariaDB
+-- PHP 版本： 8.2.12
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -18,23 +18,23 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `db05`
+-- 資料庫： `db05`
 --
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `ad`
+-- 資料表結構 `ad`
 --
 
 CREATE TABLE `ad` (
   `id` int(10) UNSIGNED NOT NULL,
-  `text` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `sh` int(1) UNSIGNED DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+  `text` text NOT NULL,
+  `sh` int(1) UNSIGNED NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data for table `ad`
+-- 傾印資料表的資料 `ad`
 --
 
 INSERT INTO `ad` (`id`, `text`, `sh`) VALUES
@@ -43,17 +43,17 @@ INSERT INTO `ad` (`id`, `text`, `sh`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `admin`
+-- 資料表結構 `admin`
 --
 
 CREATE TABLE `admin` (
   `id` int(10) UNSIGNED NOT NULL,
-  `acc` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `pw` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+  `acc` text NOT NULL,
+  `pw` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data for table `admin`
+-- 傾印資料表的資料 `admin`
 --
 
 INSERT INTO `admin` (`id`, `acc`, `pw`) VALUES
@@ -63,16 +63,16 @@ INSERT INTO `admin` (`id`, `acc`, `pw`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `bottom`
+-- 資料表結構 `bottom`
 --
 
 CREATE TABLE `bottom` (
   `id` int(10) UNSIGNED NOT NULL,
   `bottom` text NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data for table `bottom`
+-- 傾印資料表的資料 `bottom`
 --
 
 INSERT INTO `bottom` (`id`, `bottom`) VALUES
@@ -81,17 +81,17 @@ INSERT INTO `bottom` (`id`, `bottom`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `image`
+-- 資料表結構 `image`
 --
 
 CREATE TABLE `image` (
   `id` int(10) UNSIGNED NOT NULL,
-  `img` text DEFAULT NULL,
-  `sh` int(1) UNSIGNED DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+  `img` text NOT NULL,
+  `sh` int(1) UNSIGNED NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data for table `image`
+-- 傾印資料表的資料 `image`
 --
 
 INSERT INTO `image` (`id`, `img`, `sh`) VALUES
@@ -103,19 +103,19 @@ INSERT INTO `image` (`id`, `img`, `sh`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `menu`
+-- 資料表結構 `menu`
 --
 
 CREATE TABLE `menu` (
   `id` int(10) UNSIGNED NOT NULL,
-  `text` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `href` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `text` text DEFAULT NULL,
+  `href` text DEFAULT NULL,
   `main_id` int(10) UNSIGNED NOT NULL,
-  `sh` int(1) UNSIGNED DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+  `sh` int(1) UNSIGNED NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data for table `menu`
+-- 傾印資料表的資料 `menu`
 --
 
 INSERT INTO `menu` (`id`, `text`, `href`, `main_id`, `sh`) VALUES
@@ -125,38 +125,39 @@ INSERT INTO `menu` (`id`, `text`, `href`, `main_id`, `sh`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `mvim`
+-- 資料表結構 `mvim`
 --
 
 CREATE TABLE `mvim` (
   `id` int(10) UNSIGNED NOT NULL,
-  `img` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `sh` int(1) UNSIGNED DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+  `img` text NOT NULL,
+  `sh` int(1) UNSIGNED NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data for table `mvim`
+-- 傾印資料表的資料 `mvim`
 --
 
 INSERT INTO `mvim` (`id`, `img`, `sh`) VALUES
-(1, '01C02.gif', 1),
-(2, '01C03.gif', 1),
-(3, '01C04.gif', 1);
+(1, '01C01.gif', 1),
+(2, '01C02.gif', 1),
+(3, '01C03.gif', 1),
+(4, '01C04.gif', 1);
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `news`
+-- 資料表結構 `news`
 --
 
 CREATE TABLE `news` (
   `id` int(10) UNSIGNED NOT NULL,
-  `text` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `sh` int(1) UNSIGNED DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+  `text` text NOT NULL,
+  `sh` int(1) UNSIGNED NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data for table `news`
+-- 傾印資料表的資料 `news`
 --
 
 INSERT INTO `news` (`id`, `text`, `sh`) VALUES
@@ -172,156 +173,144 @@ INSERT INTO `news` (`id`, `text`, `sh`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `title`
+-- 資料表結構 `title`
 --
 
 CREATE TABLE `title` (
   `id` int(10) UNSIGNED NOT NULL,
-  `text` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `img` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `sh` int(1) UNSIGNED DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+  `text` text NOT NULL,
+  `img` text NOT NULL,
+  `sh` int(1) UNSIGNED NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data for table `title`
+-- 傾印資料表的資料 `title`
 --
 
 INSERT INTO `title` (`id`, `text`, `img`, `sh`) VALUES
-(1, '卓越科技大學校園資訊系統', '01B01.jpg', 1),
-(12, '卓越科技大學校園資訊系統', '01B02.jpg', 0),
-(13, '卓越科技大學校園資訊系統', '01B03.jpg', 0),
-(14, '卓越科技大學校園資訊系統', '01B04.jpg', 0);
+(1, '卓越科技大學校園資訊系統', '01B01.jpg', 0),
+(2, '卓越科技大學校園資訊系統', '01B02.jpg', 1),
+(3, '卓越科技大學校園資訊系統', '01B03.jpg', 0),
+(4, '卓越科技大學校園資訊系統', '01B04.jpg', 0);
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `total`
+-- 資料表結構 `total`
 --
 
 CREATE TABLE `total` (
   `id` int(10) UNSIGNED NOT NULL,
   `total` int(10) UNSIGNED NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data for table `total`
+-- 傾印資料表的資料 `total`
 --
 
 INSERT INTO `total` (`id`, `total`) VALUES
 (1, 500);
 
 --
--- Indexes for dumped tables
+-- 已傾印資料表的索引
 --
 
 --
--- Indexes for table `ad`
+-- 資料表索引 `ad`
 --
 ALTER TABLE `ad`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `admin`
+-- 資料表索引 `admin`
 --
 ALTER TABLE `admin`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `bottom`
+-- 資料表索引 `bottom`
 --
 ALTER TABLE `bottom`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `image`
+-- 資料表索引 `image`
 --
 ALTER TABLE `image`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `menu`
---
-ALTER TABLE `menu`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indexes for table `mvim`
+-- 資料表索引 `mvim`
 --
 ALTER TABLE `mvim`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `news`
+-- 資料表索引 `news`
 --
 ALTER TABLE `news`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `title`
+-- 資料表索引 `title`
 --
 ALTER TABLE `title`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `total`
+-- 資料表索引 `total`
 --
 ALTER TABLE `total`
   ADD PRIMARY KEY (`id`);
 
 --
--- AUTO_INCREMENT for dumped tables
+-- 在傾印的資料表使用自動遞增(AUTO_INCREMENT)
 --
 
 --
--- AUTO_INCREMENT for table `ad`
+-- 使用資料表自動遞增(AUTO_INCREMENT) `ad`
 --
 ALTER TABLE `ad`
   MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
--- AUTO_INCREMENT for table `admin`
+-- 使用資料表自動遞增(AUTO_INCREMENT) `admin`
 --
 ALTER TABLE `admin`
   MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
--- AUTO_INCREMENT for table `bottom`
+-- 使用資料表自動遞增(AUTO_INCREMENT) `bottom`
 --
 ALTER TABLE `bottom`
   MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
--- AUTO_INCREMENT for table `image`
+-- 使用資料表自動遞增(AUTO_INCREMENT) `image`
 --
 ALTER TABLE `image`
   MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
--- AUTO_INCREMENT for table `menu`
---
-ALTER TABLE `menu`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
-
---
--- AUTO_INCREMENT for table `mvim`
+-- 使用資料表自動遞增(AUTO_INCREMENT) `mvim`
 --
 ALTER TABLE `mvim`
   MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
--- AUTO_INCREMENT for table `news`
+-- 使用資料表自動遞增(AUTO_INCREMENT) `news`
 --
 ALTER TABLE `news`
   MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
--- AUTO_INCREMENT for table `title`
+-- 使用資料表自動遞增(AUTO_INCREMENT) `title`
 --
 ALTER TABLE `title`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
--- AUTO_INCREMENT for table `total`
+-- 使用資料表自動遞增(AUTO_INCREMENT) `total`
 --
 ALTER TABLE `total`
   MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
